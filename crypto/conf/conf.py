@@ -17,23 +17,23 @@ def read_config(path):
     print(f"dry_run_wallet: {dry_run_wallet}")
     print(f"pair_whitelist: {pair_whitelist}")
 
-def write_config(path, max_trades, stake_currency, dry_run_wallet, pair_list):
-    read_config(path)
+def write_config(read_path,write_path, max_trades, stake_currency, dry_run_wallet, pair_list):
+    read_config(read_path)
     data['max_open_trades'] = max_trades
     data['stake_currency'] = stake_currency
     data['dry_run_wallet'] = dry_run_wallet
     data['exchange']['pair_whitelist'] = pair_list
 
     # Güncellenmiş verileri aynı dosyaya geri kaydet
-    with open(path, 'w') as f:
+    with open(write_path, 'w') as f:
         json.dump(data, f, indent=4)  # indent=4, güzel bir görüntüleme için girinti ekler
 
 if __name__ == "__main__":
     # Kullanıcıdan girdi al
-    config_path = input("JSON dosyasının yolunu girin: ")
+    read_config_path = input("Okunacak JSON dosyasının yolunu girin: ")
+    write_config_path = input("Yazılacak JSON dosyasının yolunu girin: ")
 
     # Config dosyasını oku ve bilgileri göster
-    read_config(config_path)
 
     # Yeni değerleri kullanıcıdan al
     yeni_max_trades = int(input("Yeni max_trades değerini girin: "))
@@ -45,4 +45,4 @@ if __name__ == "__main__":
     yeni_pair_listesi.append(pair)
 
     # Config dosyasını güncelle ve kaydet
-    write_config(config_path, yeni_max_trades, yeni_stake_currency, yeni_dry_run_wallet, yeni_pair_listesi)
+    write_config(read_config_path,write_config_path, yeni_max_trades, yeni_stake_currency, yeni_dry_run_wallet, yeni_pair_listesi)
