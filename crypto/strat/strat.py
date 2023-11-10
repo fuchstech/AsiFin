@@ -10,8 +10,8 @@ with open(f"{user_data}/strategies/{strategy}.py","r+") as strat:
     for time in strat.readlines():
         row += 1
         if "timeframe =" in time:
-            print(time)
+            print(time,row)
             break
     if row is not None:
-        strat.readlines()[row] = interval
+        strat.readlines()[row] = "timeframe = "+ interval
         strat.writelines(strat)
