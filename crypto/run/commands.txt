@@ -1,0 +1,2 @@
+freqtrade backtesting -c /home/fuchsvm/Desktop/matris_trade/crypto/conf/data/config.json --strategy Diamond
+freqtrade download-data --config /home/fuchsvm/Desktop/matris_trade/crypto/conf/data/config.json -t ["5m"]
