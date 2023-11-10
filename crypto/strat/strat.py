@@ -11,7 +11,7 @@ with open(f"{user_data}/strategies/{strategy}.py","r+") as strat:
     for time in dosya:
         row += 1
         if "timeframe =" in time:
-            print(time)
+            print(time,row)
             break
     if row is not None:
         dosya[row] = interval
