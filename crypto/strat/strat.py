@@ -6,6 +6,12 @@ interval = "5m" #input time intervat
 
 # Dosyayı açma ve stratejileri yazma
 with open(f"{user_data}/strategies/{strategy}.py","r+") as strat:
+    row = 0
     for time in strat.readlines():
+        row += 1
         if "timeframe =" in time:
             print(time)
+            break
+    if row is not None:
+        strat.readlines()[row] = interval
+        strat.writelines(strat)
