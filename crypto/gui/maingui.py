@@ -2,6 +2,13 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QMessageBox
 import json
 import os
+
+from datetime import datetime
+
+# Şu anki tarih ve saat
+
+
+
 def backtest(strategy):
     #print(os.popen('ls').read())
     #os.system("source ./.venv/bin/activate")
@@ -13,7 +20,7 @@ def read_config(path):
     with open(path) as f:
         data = json.load(f)
 
-    # İstenilen verileri seça
+    # İstenilen verileri seç
     max_open_trades = data.get('max_open_trades')
     stake_currency = data.get('stake_currency')
     dry_run_wallet = data.get('dry_run_wallet')
@@ -53,6 +60,7 @@ class JsonConfigurator(QWidget):
         self.create_button("Save Config", self.save_config)
         self.create_button("Start Backtesting", self.start_backtesting)
         self.create_button("Hyperopt", self.run_hyperopt)
+        self.create_button("Analysis Backtest", self.analysis_backtest)
 
     def create_frame(self, title):
         frame = QWidget()
@@ -122,11 +130,21 @@ class JsonConfigurator(QWidget):
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
+        current_datetime = datetime.now()
+        formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
+        print(formatted_datetime)
         print(backtest("Diamond"))
 
     def run_hyperopt(self):
         # Buraya Hyperopt işlemlerini ekleyin
         QMessageBox.information(self, "Hyperopt", "Hyperopt started")
+
+    def analysis_backtest(self):
+        # Buraya analiz backtest işlemlerini ekleyin
+        QMessageBox.information(self, "Analysis Backtest", "Analysis Backtest started")
+        print("Analysis Backtest")
+
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
