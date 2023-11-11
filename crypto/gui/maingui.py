@@ -8,7 +8,7 @@ def read_config(path):
     with open(path) as f:
         data = json.load(f)
 
-    # İstenilen verileri seç
+    # İstenilen verileri seça
     max_open_trades = data.get('max_open_trades')
     stake_currency = data.get('stake_currency')
     dry_run_wallet = data.get('dry_run_wallet')
