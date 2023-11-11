@@ -1,8 +1,8 @@
 {
     "config": {
         "max_trades": "10",
-        "stake_currency": "EUR",
-        "dry_run_wallet": "1000",
+        "stake_currency": "USD",
+        "dry_run_wallet": "100",
         "pair_list": "BTC/USDT"
     },
     "strategy": {

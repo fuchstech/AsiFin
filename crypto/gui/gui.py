@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QMessageBox
-
+import json
 class JsonConfigurator(QWidget):
     def __init__(self):
         super().__init__()
@@ -76,10 +76,10 @@ class JsonConfigurator(QWidget):
             }
         }
 
-        with open("config.json", "w") as json_file:
+        with open("matris_trade.json", "w") as json_file:
             json_file.write(json.dumps(config_data, indent=4))
 
-        QMessageBox.information(self, "Config Saved", "Config saved to config.json")
+        QMessageBox.information(self, "Config Saved", "Config saved to matris_trade.json")
 
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
