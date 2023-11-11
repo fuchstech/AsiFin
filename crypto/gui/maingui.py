@@ -142,6 +142,7 @@ class JsonConfigurator(QWidget):
     def analysis_backtest(self):
         # Buraya analiz backtest işlemlerini ekleyin
         QMessageBox.information(self, "Analysis Backtest", "Analysis Backtest started")
+        with open("user_data/back")
         print("Analysis Backtest")
 
 
