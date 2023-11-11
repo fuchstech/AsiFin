@@ -1,0 +1,12 @@
+{
+    "config": {
+        "max_trades": "10",
+        "stake_currency": "EUR",
+        "dry_run_wallet": "1000",
+        "pair_list": "BTC/USDT"
+    },
+    "strategy": {
+        "strategy_name": "HourBasedStrategy",
+        "interval": "15m"
+    }
+}
