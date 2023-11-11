@@ -123,7 +123,6 @@ class JsonConfigurator(QWidget):
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
-        print(formatted_datetime)
         backtest_strategy = self.strategy_name_combobox.currentText()
         start_time = self.start_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
         end_time = self.end_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
