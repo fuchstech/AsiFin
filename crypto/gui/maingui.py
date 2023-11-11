@@ -1,54 +1,35 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QDateTimeEdit, QMessageBox
 import json
-import os
-
 from datetime import datetime
 
-# Şu anki tarih ve saat
-
-
-
-def backtest(strategy):
-    #print(os.popen('ls').read())
-    #os.system("source ./.venv/bin/activate")
-    print(os.popen(f'freqtrade backtesting -c matris_trade.json --strategy {strategy}').read())
+def backtest(strategy, start_time, end_time):
+    # Buraya backtest fonksiyonunu çağırmak için ek işlemler ekleyebilirsin
+    print(f'Backtesting started for strategy: {strategy}')
+    print(f'Start Time: {start_time}')
+    print(f'End Time: {end_time}')
 
 def read_config(path):
     global data
-    # JSON dosyasının içeriğini bir değişkene yükle
     with open(path) as f:
         data = json.load(f)
 
-    # İstenilen verileri seç
-    max_open_trades = data.get('max_open_trades')
-    stake_currency = data.get('stake_currency')
-    dry_run_wallet = data.get('dry_run_wallet')
-    pair_whitelist = data['exchange']['pair_whitelist']
-    # Sonuçları yazdır
-    '''
-    print(f"max_open_trades: {max_open_trades}")
-    print(f"stake_currency: {stake_currency}")
-    print(f"dry_run_wallet: {dry_run_wallet}")
-    print(f"pair_whitelist: {pair_whitelist}")'''
-
-def write_config(read_path,write_path, max_trades, stake_currency, dry_run_wallet, pair_list):
+def write_config(read_path, write_path, max_trades, stake_currency, dry_run_wallet, pair_list):
     read_config(read_path)
     data['max_open_trades'] = max_trades
     data['stake_currency'] = stake_currency
     data['dry_run_wallet'] = dry_run_wallet
     data['exchange']['pair_whitelist'] = pair_list
 
-    # Güncellenmiş verileri aynı dosyaya geri kaydet
     with open(write_path, 'w') as f:
-        json.dump(data, f, indent=4)  # indent=4, güzel bir görüntüleme için girinti ekler
+        json.dump(data, f, indent=4)
 
 class JsonConfigurator(QWidget):
     def __init__(self):
         super().__init__()
 
         self.setWindowTitle("Matiricie Trade")
-        self.setGeometry(100, 100, 400, 350)
+        self.setGeometry(100, 100, 400, 400)
 
         self.config_frame = self.create_frame("Config")
         self.strategy_frame = self.create_frame("Strategy")
@@ -80,6 +61,13 @@ class JsonConfigurator(QWidget):
             self.pair_list_combobox = self.create_combobox("Pair List:", ["ETH/USDT", "BTC/USDT"])
             frame_layout.addWidget(self.pair_list_combobox)
 
+            # İki tarih girişi
+            self.start_time_edit = self.create_datetimeedit("Start Time:")
+            frame_layout.addWidget(self.start_time_edit)
+
+            self.end_time_edit = self.create_datetimeedit("End Time:")
+            frame_layout.addWidget(self.end_time_edit)
+
         elif title == "Strategy":
             self.strategy_name_combobox = self.create_combobox("Strategy Name:", ["Diamond", "Heracles", "HourBasedStrategy", "UniversalMACD"])
             frame_layout.addWidget(self.strategy_name_combobox)
@@ -100,6 +88,12 @@ class JsonConfigurator(QWidget):
         combobox.setPlaceholderText(label_text)
         return combobox
 
+    def create_datetimeedit(self, label_text):
+        datetime_edit = QDateTimeEdit(self)
+        datetime_edit.setDisplayFormat("yyyy-MM-dd HH:mm:ss")
+        datetime_edit.setDateTime(datetime.now())
+        return datetime_edit
+
     def create_button(self, text, callback):
         button = QPushButton(text)
         button.clicked.connect(callback)
@@ -119,21 +113,21 @@ class JsonConfigurator(QWidget):
             }
         }
 
-        #with open("matris_trade.json", "w") as json_file:
-        #json_file.write(json.dumps(config_data, indent=4))
         pair_list = []
         pair_list.append(self.pair_list_combobox.currentText())
         read_config("config.json")
-        write_config("config.json","matris_trade.json",int(self.max_trades_entry.text()),self.stake_currency_combobox.currentText(),int(self.dry_run_wallet_entry.text()),pair_list)
+        write_config("config.json", "matris_trade.json", int(self.max_trades_entry.text()), self.stake_currency_combobox.currentText(),
+                     int(self.dry_run_wallet_entry.text()), pair_list)
         QMessageBox.information(self, "Config Saved", "Config saved to matris_trade.json")
 
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
-        current_datetime = datetime.now()
-        formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
         print(formatted_datetime)
-        print(backtest("Diamond"))
+        backtest_strategy = self.strategy_name_combobox.currentText()
+        start_time = self.start_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+        end_time = self.end_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+        backtest(backtest_strategy, start_time, end_time)
 
     def run_hyperopt(self):
         # Buraya Hyperopt işlemlerini ekleyin
@@ -151,10 +145,8 @@ class JsonConfigurator(QWidget):
         print("Analysis Backtest")
 
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = JsonConfigurator()
     window.show()
     sys.exit(app.exec_())
-#2023-11-11_21-35-02
