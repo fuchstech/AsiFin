@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QMessageBox
 import json
+
 class JsonConfigurator(QWidget):
     def __init__(self):
         super().__init__()

@@ -1,6 +1,11 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QMessageBox
 import json
+import os
+def backtest(strategy):
+    #print(os.popen('ls').read())
+    #os.system("source ./.venv/bin/activate")
+    print(os.popen(f'freqtrade backtesting -c matris_trade.json --strategy {strategy}').read())
 
 def read_config(path):
     global data
@@ -14,10 +19,11 @@ def read_config(path):
     dry_run_wallet = data.get('dry_run_wallet')
     pair_whitelist = data['exchange']['pair_whitelist']
     # Sonuçları yazdır
+    '''
     print(f"max_open_trades: {max_open_trades}")
     print(f"stake_currency: {stake_currency}")
     print(f"dry_run_wallet: {dry_run_wallet}")
-    print(f"pair_whitelist: {pair_whitelist}")
+    print(f"pair_whitelist: {pair_whitelist}")'''
 
 def write_config(read_path,write_path, max_trades, stake_currency, dry_run_wallet, pair_list):
     read_config(read_path)
@@ -57,7 +63,7 @@ class JsonConfigurator(QWidget):
             self.max_trades_entry = self.create_entry("Max Trades:")
             frame_layout.addWidget(self.max_trades_entry)
 
-            self.stake_currency_combobox = self.create_combobox("Stake Currency:", ["USD", "EUR"])
+            self.stake_currency_combobox = self.create_combobox("Stake Currency:", ["USDT", "USDC"])
             frame_layout.addWidget(self.stake_currency_combobox)
 
             self.dry_run_wallet_entry = self.create_entry("Dry Run Wallet:")
@@ -107,13 +113,16 @@ class JsonConfigurator(QWidget):
 
         #with open("matris_trade.json", "w") as json_file:
         #json_file.write(json.dumps(config_data, indent=4))
+        pair_list = []
+        pair_list.append(self.pair_list_combobox.currentText())
         read_config("config.json")
-        write_config("config.json","matris_trade.json",self.max_trades_entry.text(),self.stake_currency_combobox.currentText(),self.dry_run_wallet_entry.text(),self.pair_list_combobox.currentText())
+        write_config("config.json","matris_trade.json",int(self.max_trades_entry.text()),self.stake_currency_combobox.currentText(),int(self.dry_run_wallet_entry.text()),pair_list)
         QMessageBox.information(self, "Config Saved", "Config saved to matris_trade.json")
 
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
+        print(backtest("Diamond"))
 
     def run_hyperopt(self):
         # Buraya Hyperopt işlemlerini ekleyin
@@ -124,3 +133,4 @@ if __name__ == "__main__":
     window = JsonConfigurator()
     window.show()
     sys.exit(app.exec_())
+#2023-11-11_21-35-02
