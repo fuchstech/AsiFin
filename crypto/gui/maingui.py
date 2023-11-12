@@ -2,9 +2,10 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QComboBox, QDateTimeEdit, QMessageBox
 import json
 from datetime import datetime
-
+import os
 def backtest(strategy, start_time, end_time):
-    # Buraya backtest fonksiyonunu çağırmak için ek işlemler ekleyebilirsin
+    print(os.popen(f'freqtrade backtesting -c matris_trade.json --strategy {strategy} --timerange={start_time}-{end_time}').read())
+
     print(f'Backtesting started for strategy: {strategy}')
     print(f'Start Time: {start_time}')
     print(f'End Time: {end_time}')
@@ -90,7 +91,7 @@ class JsonConfigurator(QWidget):
 
     def create_datetimeedit(self, label_text):
         datetime_edit = QDateTimeEdit(self)
-        datetime_edit.setDisplayFormat("yyyy-MM-dd HH:mm:ss")
+        datetime_edit.setDisplayFormat("yyyy-MM-dd")
         datetime_edit.setDateTime(datetime.now())
         return datetime_edit
 
@@ -124,8 +125,8 @@ class JsonConfigurator(QWidget):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
         backtest_strategy = self.strategy_name_combobox.currentText()
-        start_time = self.start_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
-        end_time = self.end_time_edit.dateTime().toString("yyyy-MM-dd HH:mm:ss")
+        start_time = self.start_time_edit.dateTime().toString("yyyyMMdd")
+        end_time = self.end_time_edit.dateTime().toString("yyyyMMdd")
         backtest(backtest_strategy, start_time, end_time)
 
     def run_hyperopt(self):
@@ -140,7 +141,7 @@ class JsonConfigurator(QWidget):
             print(last["latest_backtest"])
             with open("user_data/backtest_results/"+last["latest_backtest"]) as back:
                 backtest_result = json.load(back)
-                print(backtest_result)
+                print(backtest_result["strategy"])
         print("Analysis Backtest")
 
 

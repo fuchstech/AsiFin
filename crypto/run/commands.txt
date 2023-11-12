@@ -1,2 +1,2 @@
 freqtrade backtesting -c /home/fuchsvm/Desktop/matris_trade/crypto/conf/data/config.json --strategy Diamond
-freqtrade download-data --config /home/fuchsvm/Desktop/matris_trade/crypto/conf/data/config.json -t ["5m"]
+freqtrade download-data --config matris_trade.json -t 5m 15m 1h 1d --timerange=20230501-
