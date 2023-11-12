@@ -148,8 +148,16 @@ class JsonConfigurator(QWidget):
                 #max_balance=backtest_result["strategy"]["profit_total_abs"]
                 #min_balance=backtest_result["strategy"]["profit_total_abs"]
                 #market_change=backtest_result["strategy"]["profit_total_abs"]
-                print(backtest_result["strategy"][""])
+                result_json_back = {
+                "drawdown": drawdown,
+                "sharpe": sharpe,
+                "total_profit": total_profit,
+                "total_profit_pcr": total_profit_pcr
+                # Diğer değişkenleri eklemek isterseniz buraya ekleyebilirsiniz
+                }
         print("Analysis Backtest")
+        print("#################--RESULT__############")
+        print(result_json_back)
 
 
 if __name__ == "__main__":
