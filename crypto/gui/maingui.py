@@ -132,8 +132,17 @@ class JsonConfigurator(QWidget):
 
     def run_hyperopt(self):
         # Buraya Hyperopt işlemlerini ekleyin
-        QMessageBox.information(self, "Hyperopt", "Hyperopt started")
+        hyper_strat = self.strategy_name_combobox.currentText()
+        QMessageBox.information(self, "Hyperopt", f"Hyperopt started for {hyper_strat} Strategy")
 
+        if hyper_strat == "Diamond":
+            print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss ShortTradeDurHyperOptLoss --spaces buy sell roi trailing stoploss --strategy Diamond -j 8 -e 10"))
+        elif hyper_strat == "Heracles":
+            print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss SharpeHyperOptLoss --spaces roi buy --strategy Heracles"))
+        elif hyper_strat == "UniversalMACD":
+            print(os.popen("freqtrade hyperopt -c matris_trade.json -s UniversalMACD --hyperopt-loss SharpeHyperOptLossDaily"))
+        elif hyper_strat == "":
+            print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss SharpeHyperOptLoss --strategy HourBasedStrategy -e 200"))
     def analysis_backtest(self):
         # Buraya analiz backtest işlemlerini ekleyin
         QMessageBox.information(self, "Analysis Backtest", "Analysis Backtest started")
