@@ -136,7 +136,7 @@ class JsonConfigurator(QWidget):
         QMessageBox.information(self, "Hyperopt", f"Hyperopt started for {hyper_strat} Strategy")
 
         if hyper_strat == "Diamond":
-            print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss ShortTradeDurHyperOptLoss --spaces buy sell roi trailing stoploss --strategy Diamond -j 8 -e 10"))
+            print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss ShortTradeDurHyperOptLoss --spaces buy sell roi trailing stoploss --strategy Diamond -e 10"))
         elif hyper_strat == "Heracles":
             print(os.popen("freqtrade hyperopt -c matris_trade.json --hyperopt-loss SharpeHyperOptLoss --spaces roi buy --strategy Heracles"))
         elif hyper_strat == "UniversalMACD":
