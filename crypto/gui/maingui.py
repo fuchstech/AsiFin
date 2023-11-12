@@ -28,7 +28,7 @@ def write_config(read_path, write_path, max_trades, stake_currency, dry_run_wall
 class JsonConfigurator(QWidget):
     def __init__(self):
         super().__init__()
-
+        self.strategy = ""
         self.setWindowTitle("Matiricie Trade")
         self.setGeometry(100, 100, 400, 400)
 
