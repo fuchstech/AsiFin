@@ -141,16 +141,13 @@ class JsonConfigurator(QWidget):
             print(last["latest_backtest"])
             with open("user_data/backtest_results/"+last["latest_backtest"]) as back:
                 backtest_result = json.load(back)
-                print(backtest_result["strategy"]["Diamond"]["total_trades"])
                 drawdown = backtest_result["strategy"]["Diamond"]["max_drawdown_abs"]
                 sharpe = backtest_result["strategy"]["Diamond"]["sharpe"]
                 total_profit = backtest_result["strategy_comparison"][0]["profit_total_abs"]
-                total_profit_pcr = backtest_result["strategy"]["profit_total_pct"]
-                starting_balance =backtest_result["strategy"]["starting_balance"]
-                final_balance = backtest_result["strategy"]["profit_total_abs"]
-                max_balance=backtest_result["strategy"]["profit_total_abs"]
-                min_balance=backtest_result["strategy"]["profit_total_abs"]
-                market_change=backtest_result["strategy"]["profit_total_abs"]
+                total_profit_pcr = backtest_result["strategy_comparison"][0]["profit_total_pct"]
+                #max_balance=backtest_result["strategy"]["profit_total_abs"]
+                #min_balance=backtest_result["strategy"]["profit_total_abs"]
+                #market_change=backtest_result["strategy"]["profit_total_abs"]
                 print(backtest_result["strategy"][""])
         print("Analysis Backtest")
 
