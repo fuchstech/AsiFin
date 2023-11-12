@@ -1,1 +1,53 @@
-{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '1h', 'backtest': 'from 20230101 to 20231110', 'drawdown': 57.41111414, 'sharpe': 0.38982471515598915, 'total_profit': 31.74240384, 'total_profit_pcr': 3.17}
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '1h', 'backtest': 'from 20230101 to 20231110', 'drawdown': 0.0, 'sharpe': -100, 'total_profit': 0.0, 'total_profit_pcr': 0.0}
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '5m', 'backtest': 'from 20230101 to 20231110', 'drawdown': 57.41111414, 'sharpe': 0.38982471515598915, 'total_profit': 31.74240384, 'total_profit_pcr': 3.17}
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '15m', 'backtest': 'from 20230101 to 20231110', 'drawdown': 0.0, 'sharpe': 0.596821735269201, 'total_profit': 3.81469125, 'total_profit_pcr': 0.38}
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+
+{'Pair': 'BTC/USDT', 'Strategy': 'Diamond', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+{'Pair': 'BTC/USDT', 'Strategy': 'Diamond', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.17959542258241912, 'total_profit': 1.42349085, 'total_profit_pcr': 0.14}
+{'Pair': 'BTC/USDT', 'Strategy': 'Diamond', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.8202339399999996, 'sharpe': 1.5031270285214264, 'total_profit': 32.33692673, 'total_profit_pcr': 3.23}
+{'Pair': 'BTC/USDT', 'Strategy': 'Diamond', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.5495062097559195, 'total_profit': 6.48721639, 'total_profit_pcr': 0.65}
+{'Pair': 'BTC/USDT', 'Strategy': 'Diamond', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 20.38792375, 'sharpe': -0.27783792727182177, 'total_profit': -20.38792375, 'total_profit_pcr': -2.04}
+
+{'Pair': 'BTC/USDT', 'Strategy': 'Heracles', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 1.158007437875265, 'total_profit': 159.42207886, 'total_profit_pcr': 15.94}
+{'Pair': 'BTC/USDT', 'Strategy': 'Heracles', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 1.0250475922824476, 'total_profit': 160.01458386, 'total_profit_pcr': 16.0}
+{'Pair': 'BTC/USDT', 'Strategy': 'Heracles', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.566584330000012, 'sharpe': 1.057096637715069, 'total_profit': 154.71262487, 'total_profit_pcr': 15.47}
+{'Pair': 'BTC/USDT', 'Strategy': 'Heracles', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.9323063839693089, 'total_profit': 134.42586153000002, 'total_profit_pcr': 13.44}
+{'Pair': 'BTC/USDT', 'Strategy': 'Heracles', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 17.50598241, 'sharpe': -0.1100467167545607, 'total_profit': -15.219726240000002, 'total_profit_pcr': -1.52}
+
+{'Pair': 'ETH/USDT', 'Strategy': 'Heracles', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 56.27784898, 'sharpe': 0.32303078818237685, 'total_profit': 71.90998286, 'total_profit_pcr': 7.19}
+{'Pair': 'ETH/USDT', 'Strategy': 'Heracles', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 56.53972695, 'sharpe': 0.31897544005854817, 'total_profit': 74.30108222000001, 'total_profit_pcr': 7.43}
+{'Pair': 'ETH/USDT', 'Strategy': 'Heracles', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 56.48020357, 'sharpe': 0.3252847783470823, 'total_profit': 75.48641583999999, 'total_profit_pcr': 7.55}
+{'Pair': 'ETH/USDT', 'Strategy': 'Heracles', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 55.25212745, 'sharpe': 0.07785978613142269, 'total_profit': 17.297291539999996, 'total_profit_pcr': 1.73}
+{'Pair': 'ETH/USDT', 'Strategy': 'Heracles', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': -100, 'total_profit': 0.0, 'total_profit_pcr': 0.0}
+
+{'Pair': 'BTC/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 52.70083175, 'sharpe': 0.7781260162749801, 'total_profit': 95.08837587000001, 'total_profit_pcr': 9.51}
+{'Pair': 'BTC/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 53.38287906000001, 'sharpe': 0.7363418363977458, 'total_profit': 91.85226478999999, 'total_profit_pcr': 9.19}
+{'Pair': 'BTC/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 52.36384586000001, 'sharpe': 0.9430577170707792, 'total_profit': 116.38482866999999, 'total_profit_pcr': 11.64}
+{'Pair': 'BTC/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 52.36384586000001, 'sharpe': 0.9430577170707792, 'total_profit': 116.38482866999999, 'total_profit_pcr': 11.64}
+{'Pair': 'BTC/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 52.36384586000001, 'sharpe': 0.9430577170707792, 'total_profit': 116.38482866999999, 'total_profit_pcr': 11.64}
+
+{'Pair': 'ETH/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 72.81042303999999, 'sharpe': 0.34596837194510344, 'total_profit': 43.95099236999998, 'total_profit_pcr': 4.4}
+{'Pair': 'ETH/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 77.69240694999999, 'sharpe': 0.36846473595592, 'total_profit': 48.54643402000001, 'total_profit_pcr': 4.85}
+{'Pair': 'ETH/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 89.10311005, 'sharpe': 0.17055260288361285, 'total_profit': 21.688335069999997, 'total_profit_pcr': 2.17}
+{'Pair': 'ETH/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 94.47095146, 'sharpe': 0.06614614917961088, 'total_profit': 8.721900059999983, 'total_profit_pcr': 0.87}
+{'Pair': 'ETH/USDT', 'Strategy': 'HourBasedStrategy', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+
+{'Pair': 'ETH/USDT', 'Strategy': 'UniversalMACD', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.4669950673714967, 'total_profit': 14.62633445, 'total_profit_pcr': 1.46}
+{'Pair': 'ETH/USDT', 'Strategy': 'UniversalMACD', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.27337576166297795, 'total_profit': 8.15741863, 'total_profit_pcr': 0.82}
+{'Pair': 'ETH/USDT', 'Strategy': 'UniversalMACD', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.27337576166297795, 'total_profit': 8.15741863, 'total_profit_pcr': 0.82}
+{'Pair': 'ETH/USDT', 'Strategy': 'UniversalMACD', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.2596254138061182, 'total_profit': 2.20467393, 'total_profit_pcr': 0.22}
+{'Pair': 'ETH/USDT', 'Strategy': 'UniversalMACD', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.2596254138061182, 'total_profit': 2.20467393, 'total_profit_pcr': 0.22}
+
+{'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.23184583306109338, 'total_profit': 8.41693899, 'total_profit_pcr': 0.84}
+{'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.3428399706509093, 'total_profit': 17.424240740000002, 'total_profit_pcr': 1.74}
+{'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.3405395782287665, 'total_profit': 0.63321599, 'total_profit_pcr': 0.06}
+{'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0.41176233640595405, 'total_profit': 15.55426714, 'total_profit_pcr': 1.56}
+{'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': -100, 'total_profit': 0.0, 'total_profit_pcr': 0.0}
+
+
+
+
+
+
