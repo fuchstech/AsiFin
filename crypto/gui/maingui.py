@@ -124,7 +124,6 @@ class JsonConfigurator(QWidget):
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
-        self.strategy = self.strategy_name_combobox.currentText()
         backtest_strategy = self.strategy_name_combobox.currentText()
         start_time = self.start_time_edit.dateTime().toString("yyyyMMdd")
         end_time = self.end_time_edit.dateTime().toString("yyyyMMdd")
@@ -152,7 +151,7 @@ class JsonConfigurator(QWidget):
                 #min_balance=backtest_result["strategy"]["profit_total_abs"]
                 #market_change=backtest_result["strategy"]["profit_total_abs"]
                 result_json_back = {
-                "Pair":self.config_data["strategy"]["strategy_name"],
+                "Pair":self.config_data["config"]["pair_list"],
                 "Strategy":self.strategy,
                 "interval":self.config_data["strategy"]["interval"],
                 "backtest":f"from {self.start_time} to {self.end_time}",
