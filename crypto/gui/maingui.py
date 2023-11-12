@@ -101,7 +101,7 @@ class JsonConfigurator(QWidget):
         self.layout().addWidget(button)
 
     def save_config(self):
-        config_data = {
+        self.config_data = {
             "config": {
                 "max_trades": self.max_trades_entry.text(),
                 "stake_currency": self.stake_currency_combobox.currentText(),
@@ -124,9 +124,12 @@ class JsonConfigurator(QWidget):
     def start_backtesting(self):
         # Buraya backtesting işlemlerini ekleyin
         QMessageBox.information(self, "Backtesting", "Backtesting started")
+        self.strategy = self.strategy_name_combobox.currentText()
         backtest_strategy = self.strategy_name_combobox.currentText()
         start_time = self.start_time_edit.dateTime().toString("yyyyMMdd")
         end_time = self.end_time_edit.dateTime().toString("yyyyMMdd")
+        self.start_time = start_time
+        self.end_time = end_time
         backtest(backtest_strategy, start_time, end_time)
 
     def run_hyperopt(self):
@@ -141,14 +144,18 @@ class JsonConfigurator(QWidget):
             print(last["latest_backtest"])
             with open("user_data/backtest_results/"+last["latest_backtest"]) as back:
                 backtest_result = json.load(back)
-                drawdown = backtest_result["strategy"]["Diamond"]["max_drawdown_abs"]
-                sharpe = backtest_result["strategy"]["Diamond"]["sharpe"]
+                drawdown = backtest_result["strategy"][self.strategy]["max_drawdown_abs"]
+                sharpe = backtest_result["strategy"][self.strategy]["sharpe"]
                 total_profit = backtest_result["strategy_comparison"][0]["profit_total_abs"]
                 total_profit_pcr = backtest_result["strategy_comparison"][0]["profit_total_pct"]
                 #max_balance=backtest_result["strategy"]["profit_total_abs"]
                 #min_balance=backtest_result["strategy"]["profit_total_abs"]
                 #market_change=backtest_result["strategy"]["profit_total_abs"]
                 result_json_back = {
+                "Pair":self.config_data["strategy"]["strategy_name"],
+                "Strategy":self.strategy,
+                "interval":self.config_data["strategy"]["interval"],
+                "backtest":f"from {self.start_time} to {self.end_time}",
                 "drawdown": drawdown,
                 "sharpe": sharpe,
                 "total_profit": total_profit,
