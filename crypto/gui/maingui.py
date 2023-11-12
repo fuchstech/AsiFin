@@ -58,7 +58,7 @@ class JsonConfigurator(QWidget):
             self.dry_run_wallet_entry = self.create_entry("Dry Run Wallet:")
             frame_layout.addWidget(self.dry_run_wallet_entry)
 
-            self.pair_list_combobox = self.create_combobox("Pair List:", ["ETH/USDT", "BTC/USDT"])
+            self.pair_list_combobox = self.create_combobox("Pair List:", ["ETH/USDT", "BTC/USDT","AVAX/USDT"])
             frame_layout.addWidget(self.pair_list_combobox)
 
             # İki tarih girişi
