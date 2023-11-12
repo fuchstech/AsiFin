@@ -3,8 +3,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButto
 import json
 from datetime import datetime
 import os
-def backtest(strategy, start_time, end_time):
-    print(os.popen(f'freqtrade backtesting -c matris_trade.json --strategy {strategy} --timerange={start_time}-{end_time}').read())
+def backtest(strategy, start_time, end_time,interval):
+    print(os.popen(f'freqtrade backtesting -c matris_trade.json --strategy {strategy} -i {interval} --timerange={start_time}-{end_time}').read())
 
     print(f'Backtesting started for strategy: {strategy}')
     print(f'Start Time: {start_time}')
@@ -28,7 +28,6 @@ def write_config(read_path, write_path, max_trades, stake_currency, dry_run_wall
 class JsonConfigurator(QWidget):
     def __init__(self):
         super().__init__()
-        self.strategy = ""
         self.setWindowTitle("Matiricie Trade")
         self.setGeometry(100, 100, 400, 400)
 
@@ -129,7 +128,7 @@ class JsonConfigurator(QWidget):
         end_time = self.end_time_edit.dateTime().toString("yyyyMMdd")
         self.start_time = start_time
         self.end_time = end_time
-        backtest(backtest_strategy, start_time, end_time)
+        backtest(backtest_strategy, start_time, end_time,self.config_data["strategy"]["interval"])
 
     def run_hyperopt(self):
         # Buraya Hyperopt işlemlerini ekleyin
@@ -143,8 +142,8 @@ class JsonConfigurator(QWidget):
             print(last["latest_backtest"])
             with open("user_data/backtest_results/"+last["latest_backtest"]) as back:
                 backtest_result = json.load(back)
-                drawdown = backtest_result["strategy"][self.strategy]["max_drawdown_abs"]
-                sharpe = backtest_result["strategy"][self.strategy]["sharpe"]
+                drawdown = backtest_result["strategy"][self.strategy_name_combobox.currentText()]["max_drawdown_abs"]
+                sharpe = backtest_result["strategy"][self.strategy_name_combobox.currentText()]["sharpe"]
                 total_profit = backtest_result["strategy_comparison"][0]["profit_total_abs"]
                 total_profit_pcr = backtest_result["strategy_comparison"][0]["profit_total_pct"]
                 #max_balance=backtest_result["strategy"]["profit_total_abs"]
@@ -152,7 +151,7 @@ class JsonConfigurator(QWidget):
                 #market_change=backtest_result["strategy"]["profit_total_abs"]
                 result_json_back = {
                 "Pair":self.config_data["config"]["pair_list"],
-                "Strategy":self.strategy,
+                "Strategy":self.strategy_name_combobox.currentText(),
                 "interval":self.config_data["strategy"]["interval"],
                 "backtest":f"from {self.start_time} to {self.end_time}",
                 "drawdown": drawdown,

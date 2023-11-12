@@ -1,0 +1,1 @@
+{'Pair': 'ETH/USDT', 'Strategy': 'Diamond', 'interval': '1h', 'backtest': 'from 20230101 to 20231110', 'drawdown': 57.41111414, 'sharpe': 0.38982471515598915, 'total_profit': 31.74240384, 'total_profit_pcr': 3.17}
