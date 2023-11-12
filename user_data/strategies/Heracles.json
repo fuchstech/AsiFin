@@ -1,0 +1,33 @@
+{
+  "strategy_name": "Heracles",
+  "params": {
+    "stoploss": {
+      "stoploss": -0.256
+    },
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 5
+    },
+    "buy": {
+      "buy_crossed_indicator_shift": 4,
+      "buy_div_max": 0.78,
+      "buy_div_min": 0.37,
+      "buy_indicator_shift": 15
+    },
+    "sell": {},
+    "protection": {},
+    "roi": {
+      "0": 0.39,
+      "1886": 0.253,
+      "2982": 0.091,
+      "8004": 0
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2023-11-12 08:23:54.449559+00:00"
+}
