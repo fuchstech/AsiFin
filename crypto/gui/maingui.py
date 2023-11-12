@@ -162,7 +162,7 @@ class JsonConfigurator(QWidget):
                 # Diğer değişkenleri eklemek isterseniz buraya ekleyebilirsiniz
                 }
         print("Analysis Backtest")
-        print("#################--RESULT__############")
+        print("#################--RESULT---############")
         print(result_json_back)
 
 
