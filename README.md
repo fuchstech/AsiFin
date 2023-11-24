@@ -33,4 +33,9 @@ add this lines at the bottom of the .bashrc file
 cd #global_path_of_your_freqtrade_folder
 source ./.venv/bin/activate
 ```
+###Install other dependencies for PyQt5
+```
+pip install PyQt5
+sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+```
 
