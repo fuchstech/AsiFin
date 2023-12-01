@@ -1,3 +1,3 @@
 freqtrade backtesting -c /home/fuchsvm/Desktop/matris_trade/crypto/conf/data/config.json --strategy Diamond
 freqtrade download-data --config matris_trade.json -t 1d --prepend --timerange=20230501-
-freqtrade download-data --exchange binance --pairs AVAX/USDT --prepend -t 4h 1h 5m 15m 1d --timerange 20230101-20231110
+freqtrade download-data --exchange binance --pairs ETH/USDT --prepend -t 4h 1h 5m 15m 1d --timerange 20230101-20231110

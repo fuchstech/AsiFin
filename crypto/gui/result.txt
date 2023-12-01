@@ -47,7 +47,16 @@
 {'Pair': 'BTC/USDT', 'Strategy': 'UniversalMACD', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': -100, 'total_profit': 0.0, 'total_profit_pcr': 0.0}
 
 
+--
 
+{'Pair': 'AVAX/USDT', 'Strategy': 'Diamond', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Diamond', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Diamond', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Diamond', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 0.0, 'sharpe': 0, 'total_profit': 0, 'total_profit_pcr': 0.0}
 
-
+{'Pair': 'AVAX/USDT', 'Strategy': 'Heracles', 'interval': '5m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 119.9005483, 'sharpe': 0.13193615552123167, 'total_profit': 48.848016, 'total_profit_pcr': 4.88}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Heracles', 'interval': '15m', 'backtest': 'from 20230101 to 20231101', 'drawdown': 115.7403872, 'sharpe': 0.1909283553091755, 'total_profit': 72.165405, 'total_profit_pcr': 7.22}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Heracles', 'interval': '1h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 128.32235880000002, 'sharpe': 0.11787888993619675, 'total_profit': 43.30149869999999, 'total_profit_pcr': 4.33}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Heracles', 'interval': '4h', 'backtest': 'from 20230101 to 20231101', 'drawdown': 162.1681192, 'sharpe': 0.18935060306821067, 'total_profit': 78.19006770000004, 'total_profit_pcr': 7.82}
+{'Pair': 'AVAX/USDT', 'Strategy': 'Heracles', 'interval': '1d', 'backtest': 'from 20230101 to 20231101', 'drawdown': 111.2210646, 'sharpe': -0.2577021974669739, 'total_profit': -86.1215307, 'total_profit_pcr': -8.61}
 
